@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mingus Image Transcription"
+  short_description: "Turn local or resolved image files into raw OCR text."
+  default_prompt: "Use $mingus-image-transcription to extract raw OCR text from these note images in order."

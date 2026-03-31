@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mingus Video Transcription"
+  short_description: "Turn local or resolved media files into raw spoken transcripts."
+  default_prompt: "Use $mingus-video-transcription to turn this short video or resolved media URL into a raw spoken transcript."

@@ -5,7 +5,7 @@
 This skill expects a local image file or a direct public image URL.
 
 - Good: `https://.../note-1.webp`
-- Bad: `https://www.xiaohongshu.com/explore/...`
+- Bad: `https://www.xhs-style-post-page.com/explore/...`
 
 If you only have a social post page URL, first resolve the real image URLs through a browser workflow.
 

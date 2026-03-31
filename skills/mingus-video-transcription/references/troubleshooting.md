@@ -2,7 +2,7 @@
 
 ## When the input is a social media page URL
 
-This skill does not resolve page URLs like Xiaohongshu post links.
+This skill does not resolve page URLs like xhs post links.
 
 Use a browser workflow first to obtain:
 

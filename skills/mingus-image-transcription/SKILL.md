@@ -1,6 +1,6 @@
 ---
 name: mingus-image-transcription
-description: Extract raw visible text from local image files or resolved public image URLs using Apple Vision OCR on macOS. Use when Codex needs 图文转文字 from screenshots, downloaded note images, scans, posters, slides, or direct image URLs, especially for Xiaohongshu-style image posts where the goal is to capture image text rather than spoken audio. If the user only has a social post page URL, first resolve the real image URLs or save the images locally through a separate browser workflow; this skill starts from the image file itself.
+description: Extract raw visible text from local image files or resolved public image URLs using Apple Vision OCR on macOS. Use when Codex needs 图文转文字 from screenshots, downloaded note images, scans, posters, slides, or direct image URLs, especially for xhs-style image posts where the goal is to capture image text rather than spoken audio. If the user only has a social post page URL, first resolve the real image URLs or save the images locally through a separate browser workflow; this skill starts from the image file itself.
 ---
 
 # Mingus Image Transcription
@@ -9,7 +9,7 @@ description: Extract raw visible text from local image files or resolved public 
 
 Use this skill to turn one or more local images, or direct image URLs, into raw OCR text with Apple Vision on macOS.
 
-This skill is for **image OCR**, not page scraping. If the user only has a Xiaohongshu/TikTok/Instagram post page URL, first resolve the actual image URLs or download the images locally, then use the scripts here.
+This skill is for **image OCR**, not page scraping. If the user only has an xhs/TikTok/Instagram post page URL, first resolve the actual image URLs or download the images locally, then use the scripts here.
 
 ## Workflow
 

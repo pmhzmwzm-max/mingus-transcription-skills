@@ -20,7 +20,7 @@ Use this skill when the input is one of:
 - A local file such as `.mp4`, `.mov`, `.m4a`, `.mp3`, `.wav`
 - A resolved public direct media URL that points to a real file
 
-Do **not** use this skill directly on a Xiaohongshu/TikTok/Instagram post page URL. Those page URLs need a separate browser/media-resolution step first.
+Do **not** use this skill directly on an xhs/TikTok/Instagram post page URL. Those page URLs need a separate browser/media-resolution step first.
 
 ### 2. Prepare the local whisper model
 

@@ -5,7 +5,7 @@
 It currently includes:
 
 - `mingus-video-transcription`
-  - Turn local video/audio files or resolved direct media URLs into raw spoken transcripts
+  - Turn local video/audio files or resolved direct media URLs into raw spoken transcripts with a local `faster-whisper-small` default
 - `mingus-image-transcription`
   - Turn local images or resolved direct image URLs into raw OCR text, including ordered multi-image notes
 
@@ -24,6 +24,13 @@ That means:
 - First resolve the real video URL or image URLs through a browser workflow
 - Then pass the resolved media asset into the matching Mingus skill
 
+Recommended fast path for repeat collection:
+
+1. Resolve the real media assets once with a browser workflow
+2. Feed video into `mingus-video-transcription/scripts/transcribe_media.py`
+3. Feed note images into `mingus-image-transcription/scripts/ocr_images.py`
+4. Keep raw output honest, then do cleanup downstream if needed
+
 ## Included skills
 
 ### `mingus-video-transcription`
@@ -38,6 +45,11 @@ Input:
 Output:
 - Raw ASR transcript text
 
+Defaults:
+- Local model path: `data/models/faster-whisper-small`
+- Raw spoken transcript only
+- Never use OCR as a silent replacement for ASR
+
 ### `mingus-image-transcription`
 
 Purpose:
@@ -50,6 +62,9 @@ Input:
 Output:
 - Raw OCR text
 - Ordered multi-image OCR blocks for image-note workflows
+
+Best practice:
+- For multi-image note workflows, prefer the batch wrapper `ocr_images.py` over repeated one-by-one OCR calls
 
 ## Repository layout
 
@@ -84,6 +99,7 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/m
 - Do not use social post page URLs as direct inputs
 - Preserve ordered image flow for multi-image notes
 - Treat cleanup and paraphrase as separate downstream steps
+- If ASR quality is clearly poor, mark it as low-quality raw ASR instead of presenting it as final-quality transcript
 
 ## Typical usage
 

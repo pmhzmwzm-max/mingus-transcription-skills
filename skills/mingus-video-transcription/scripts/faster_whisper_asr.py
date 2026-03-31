@@ -9,7 +9,7 @@ def main() -> int:
         return 1
 
     media_path = sys.argv[1]
-    model_path = sys.argv[2] if len(sys.argv) >= 3 else "data/models/faster-whisper-tiny"
+    model_path = sys.argv[2] if len(sys.argv) >= 3 else "data/models/faster-whisper-small"
 
     try:
         from faster_whisper import WhisperModel
@@ -21,9 +21,12 @@ def main() -> int:
         model = WhisperModel(model_path, device="cpu", compute_type="int8", local_files_only=True)
         segments, _ = model.transcribe(
             media_path,
-            beam_size=1,
+            beam_size=5,
+            best_of=5,
             vad_filter=True,
             language="zh",
+            condition_on_previous_text=True,
+            word_timestamps=False,
         )
         transcript = "".join(segment.text.strip() for segment in segments if segment.text.strip()).strip()
         if not transcript:
